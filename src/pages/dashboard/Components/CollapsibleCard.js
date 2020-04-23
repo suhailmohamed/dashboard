@@ -1,12 +1,14 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import SimpleAccordian from './SimpleAccordian';
-import { accordianData } from './AccordianConstants';
 import { CollapsibleContainer } from './CollapsibleCardStyles';
 import PlusIcon from '../../common-components/PlusIcon';
 import DeleteModal from './DeleteModal';
 
+const API_URL = "https://www.mocky.io/v2/5e8a7b512d00003c1a1a4665";
+
 const CollapsibleCard = () => {
   const [isModalOpen, setModalOpenState] = useState(false);
+  const [getAccordianData, setAccordianData] = useState({});
 
   const closeModal = () => {
     setModalOpenState(false);
@@ -30,7 +32,26 @@ const CollapsibleCard = () => {
     e && e.stopPropagation();
   }
 
-  let components = accordianData.map(data => {
+  
+  useEffect(() => {
+    if (Object.keys(getAccordianData).length > 0) {
+      return;
+    } else {
+      fetch(API_URL)
+      .then(response => response.json())
+      .then(resData => {
+        const dataValue = resData;
+        setAccordianData(dataValue);
+      })
+      .catch(error => {
+        return error;
+      });
+    }
+  }, []);
+
+  console.log(getAccordianData["homepage_data"]);
+
+  let components = getAccordianData["homepage_data"] && getAccordianData["homepage_data"].map(data => {
     return {
       header: (
         <div className="header">
@@ -58,7 +79,7 @@ const CollapsibleCard = () => {
               >
                 <figure
                   style={{
-                    background: `url(${item.image_url}) no-repeat center / ${item.bg_size || "cover"}`
+                    background: `url(${item.image_url}) no-repeat center / cover`
                   }}
                 />
 
