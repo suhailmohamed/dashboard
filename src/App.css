@@ -4,13 +4,14 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 *,
 *::before,
 *::after {
   box-sizing: border-box; }
 
 html {
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
   -webkit-text-size-adjust: 100%; }
 
 article,
@@ -29,7 +30,7 @@ body {
   font-family: "Avenir", sans-serif;
   font-size: 14px;
   line-height: 1.45;
-  color: #19181D;
+  color: #19181d;
   background-color: #ffffff;
   margin: 0; }
 
@@ -6334,19 +6335,6 @@ img {
 input:focus {
   outline: 0; }
 
-.regular {
-  font-weight: 400; }
-
-.medium {
-  font-weight: 18px; }
-
-.semi-bold {
-  font-weight: 600; }
-
-.bold, b,
-strong {
-  font-weight: 700; }
-
 .mb-8 {
   margin-bottom: 8px; }
 
@@ -6361,6 +6349,9 @@ strong {
 
 .mb-40 {
   margin-bottom: 40px; }
+
+.mb-48 {
+  margin-bottom: 48px; }
 
 .mt-8 {
   margin-top: 8px; }
@@ -6396,60 +6387,19 @@ strong {
   -ms-flex-align: flex-end;
   align-items: flex-end; }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   .lg-container {
     width: 1176px; } }
 
-@font-face {
-  font-family: 'avenir';
-  font-weight: 400;
-  font-display: fallback;
-  font-style: normal;
-  src: url("https://d3lf10b5gahyby.cloudfront.net/misc/fonts-test/avenir/400.ttf") format("truetype"), url("https://d3lf10b5gahyby.cloudfront.net/misc/fonts-test/avenir/400.woff") format("woff"), url("https://d3lf10b5gahyby.cloudfront.net/misc/fonts-test/avenir/400.woff2") format("woff2"); }
+@media (max-width: 767px) {
+  .xs-fullwidth {
+    width: 100%; } }
 
-@font-face {
-  font-family: 'avenir';
-  font-weight: 600;
-  font-display: fallback;
-  font-style: normal;
-  src: url("https://d3lf10b5gahyby.cloudfront.net/misc/fonts-test/avenir/600.ttf") format("truetype"), url("https://d3lf10b5gahyby.cloudfront.net/misc/fonts-test/avenir/600.woff") format("woff"), url("https://d3lf10b5gahyby.cloudfront.net/misc/fonts-test/avenir/600.woff2") format("woff2"); }
+.content-wrap {
+  padding-top: 80px; }
+  @media (max-width: 767px) {
+    .content-wrap {
+      padding: 56px 16px; } }
 
-@font-face {
-  font-family: 'avenir';
-  font-weight: 700;
-  font-display: fallback;
-  font-style: normal;
-  src: url("https://d3lf10b5gahyby.cloudfront.net/misc/fonts-test/avenir/700.ttf") format("truetype"), url("https://d3lf10b5gahyby.cloudfront.net/misc/fonts-test/avenir/700.woff") format("woff"), url("https://d3lf10b5gahyby.cloudfront.net/misc/fonts-test/avenir/700.woff2") format("woff2"); }
-
-@font-face {
-  font-family: 'pentafox';
-  src: url("./fonts/pentafox.eot?x0t6zd");
-  src: url("./fonts/pentafox.eot?x0t6zd#iefix") format("embedded-opentype"), url("./fonts/pentafox.ttf?x0t6zd") format("truetype"), url("./fonts/pentafox.woff?x0t6zd") format("woff"), url("./fonts/pentafox.svg?x0t6zd#pentafox") format("svg");
-  font-weight: normal;
-  font-style: normal;
-  font-display: block; }
-
-[class^="pentafox-"], [class*=" pentafox-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'pentafox' !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
-.pentafox-whatsapp:before {
-  content: "\e903"; }
-
-.pentafox-twitter:before {
-  content: "\e902"; }
-
-.pentafox-instagram:before {
-  content: "\e901"; }
-
-.pentafox-facebook:before {
-  content: "\e900"; }
+.scroll-locked {
+  overflow: hidden; }

@@ -10,7 +10,7 @@
   box-sizing: border-box; }
 
 html {
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
   -webkit-text-size-adjust: 100%; }
 
 article,
@@ -29,7 +29,7 @@ body {
   font-family: "Avenir", sans-serif;
   font-size: 14px;
   line-height: 1.45;
-  color: #19181D;
+  color: #19181d;
   background-color: #ffffff;
   margin: 0; }
 
